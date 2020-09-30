@@ -14,9 +14,9 @@ public class Task13 {
 
         if (s.length() > d.length())
             System.out.println("Самая длинная строка: " + s);
-        if (s.length() < d.length())
+        else if (s.length() < d.length())
             System.out.println("Самая длинная строка: " + d);
-        if (s.length() == d.length())
+        else
             System.out.print("Строки одинаковы по длине");
     }
 }
