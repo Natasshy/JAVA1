@@ -10,7 +10,7 @@ import java.io.*;
 public class Task18 {
 
     public static void main(String[] args) {
-        String s;
+        String s; int lineNumber = 0;
         try (BufferedReader br = new BufferedReader(new FileReader("test1.txt"))) {
             while ((s = br.readLine()) != null) {
                 System.out.println(s);
@@ -22,7 +22,6 @@ public class Task18 {
             File myFile = new File("test1.txt");
             FileReader fileReader = new FileReader(myFile);
             LineNumberReader lineNumberReader = new LineNumberReader(fileReader);
-            int lineNumber = 0;
             while (lineNumberReader.readLine() != null){
                 lineNumber++;
             }
@@ -38,7 +37,7 @@ public class Task18 {
 
         BufferedReader br = new BufferedReader(
                 new InputStreamReader(System.in));
-        System.out.println("Введите текст для перезаписи предыдующих значений.По окончании введите слово 'stop'." );
+        System.out.println("Введите текст для перезаписи предыдующих значений (не более " +  lineNumber + " строк).По окончании введите слово 'stop'.");
 
         try (FileWriter fw = new FileWriter("test1.txt", false))
         {
